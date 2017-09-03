@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端开发中常见问题杂烩(1). | Hero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="影响网页加载速度慢的几大原因:     文件太大, HTML,CSS,JS,图片等文件都算    请求资源的数量太多造成网络堵塞    css,html代码写的不合理, 导致网页渲染慢    js中过多的使用同步请求,导致后面的内容加载速度慢    js中垃圾没有回收,内容泄露,代码逻辑复杂等导致页面运行缓慢    个人网速,或者服务器的网速慢导致   CSS加载顺序      位置属性">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发中常见问题杂烩(1).">
+<meta property="og:url" content="http://yoursite.com/2017/04/30/前端开发中常见问题杂烩(1)/index.html">
+<meta property="og:site_name" content="Hero">
+<meta property="og:description" content="影响网页加载速度慢的几大原因:     文件太大, HTML,CSS,JS,图片等文件都算    请求资源的数量太多造成网络堵塞    css,html代码写的不合理, 导致网页渲染慢    js中过多的使用同步请求,导致后面的内容加载速度慢    js中垃圾没有回收,内容泄露,代码逻辑复杂等导致页面运行缓慢    个人网速,或者服务器的网速慢导致   CSS加载顺序      位置属性">
+<meta property="og:updated_time" content="2017-05-10T03:09:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发中常见问题杂烩(1).">
+<meta name="twitter:description" content="影响网页加载速度慢的几大原因:     文件太大, HTML,CSS,JS,图片等文件都算    请求资源的数量太多造成网络堵塞    css,html代码写的不合理, 导致网页渲染慢    js中过多的使用同步请求,导致后面的内容加载速度慢    js中垃圾没有回收,内容泄露,代码逻辑复杂等导致页面运行缓慢    个人网速,或者服务器的网速慢导致   CSS加载顺序      位置属性">
+  
+    <link rel="alternate" href="/atom.xml" title="Hero" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hero</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-前端开发中常见问题杂烩(1)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/30/前端开发中常见问题杂烩(1)/" class="article-date">
+  <time datetime="2017-04-29T18:40:00.000Z" itemprop="datePublished">2017-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端开发中常见问题杂烩(1).
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="影响网页加载速度慢的几大原因"><a href="#影响网页加载速度慢的几大原因" class="headerlink" title="影响网页加载速度慢的几大原因:"></a>影响网页加载速度慢的几大原因:</h3><blockquote>
+<ol><br>    <li>文件太大, HTML,CSS,JS,图片等文件都算</li><br>    <li>请求资源的数量太多造成网络堵塞</li><br>    <li>css,html代码写的不合理, 导致网页渲染慢</li><br>    <li>js中过多的使用同步请求,导致后面的内容加载速度慢</li><br>    <li>js中垃圾没有回收,内容泄露,代码逻辑复杂等导致页面运行缓慢</li><br>    <li>个人网速,或者服务器的网速慢导致</li><br></ol>
+
+</blockquote>
+<h3 id="CSS加载顺序"><a href="#CSS加载顺序" class="headerlink" title="CSS加载顺序"></a>CSS加载顺序</h3><blockquote>
+<ol><br>    <li> 位置属性 </li><br>    <li> 大小 </li><br>    <li> 文字系列 </li><br>    <li> 背景 </li><br>    <li> 其他 </li><br></ol>
+
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/30/前端开发中常见问题杂烩(1)/" data-id="cj74lxrce0003bruls8fk2pep" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/17/关于JS中变量,作用域和内存问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS中的变量,作用域和内存问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/技术/" style="font-size: 10px;">技术</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/30/前端开发中常见问题杂烩(1)/">前端开发中常见问题杂烩(1).</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/17/关于JS中变量,作用域和内存问题/">JS中的变量,作用域和内存问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/17/关于ECMAScript6 的一些新特性(1)/">关于ECMAScript6 的一些新特性(1).</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
