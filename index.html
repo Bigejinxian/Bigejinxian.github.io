@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hero">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hero">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hero">
+  
+    <link rel="alternate" href="/atom.xml" title="Hero" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hero</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-关于ECMAScript6 的一些新特性(1)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/17/关于ECMAScript6 的一些新特性(1)/" class="article-date">
+  <time datetime="2017-04-17T10:15:30.000Z" itemprop="datePublished">2017-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/17/关于ECMAScript6 的一些新特性(1)/">关于ECMAScript6 的一些新特性(1).</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><h4 id="块级作用域–let"><a href="#块级作用域–let" class="headerlink" title="块级作用域–let:"></a>块级作用域–let:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//ES5中只有全局作用域和局部作用域. 在ES6中 有了块级作用域.</div><div class="line">    </div><div class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">  <span class="built_in">let</span> fruit = <span class="string">'apple'</span>;</div><div class="line">&#125;</div><div class="line">    </div><div class="line">console.log(fruit);</div><div class="line">    </div><div class="line">/*使用<span class="built_in">let</span> 定义的变量只能用于定义它的那个块里面, 在块的外面是获取不到的. 目的就是要把当前的变量绑定到当前的作用域里*/</div></pre></td></tr></table></figure>
+<h4 id="const"><a href="#const" class="headerlink" title="const:"></a>const:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">   //在ES6中const用来表示一个衡量, 所谓衡量就是定义之后,不能被再重新赋值了.</div><div class="line"> </div><div class="line">  const fruit = <span class="string">'apple'</span>;</div><div class="line"> </div><div class="line">  console.log(fruit);</div><div class="line"> </div><div class="line">  const fruit = <span class="string">'banana'</span>;  </div><div class="line"> </div><div class="line">  console.log(fruit);    // 会报错.</div><div class="line"> </div><div class="line">   /*const 限制的是给衡量分配值的这个动作, 并不是显示衡量里面的值.*/</div><div class="line"> </div><div class="line">$  const arr = [];</div><div class="line"> </div><div class="line">  arr.push(<span class="string">'apple'</span>,<span class="string">'banana'</span>,<span class="string">'orange'</span>);</div><div class="line">  console.log(arr);   //输出后你会看见数组中,🍎,🍌和🍊.</div><div class="line"> </div><div class="line">  arr = [];   //但是当我重新给arr赋值的时候.会报错.</div></pre></td></tr></table></figure>
+<h4 id="breakfast"><a href="#breakfast" class="headerlink" title="breakfast"></a>breakfast</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//在ES6中breakfast, 分解结构的功能.</div><div class="line"></div><div class="line"> <span class="keyword">function</span> <span class="function"><span class="title">breakfast</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> [<span class="string">'🍎'</span>, <span class="string">'🍌'</span>, <span class="string">'🍊'</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"> <span class="built_in">let</span> [dessert, drink, fruit] = breakfast();</div><div class="line"></div><div class="line"> console.log(dessert, drink, fruit);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/17/关于ECMAScript6 的一些新特性(1)/" data-id="cj74ltwz70000a1uliwhxi2y2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/技术/" style="font-size: 10px;">技术</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/17/关于ECMAScript6 的一些新特性(1)/">关于ECMAScript6 的一些新特性(1).</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Daniel<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
