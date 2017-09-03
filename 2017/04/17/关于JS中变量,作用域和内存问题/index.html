@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hero</title>
+  <title>JS中的变量,作用域和内存问题 | Hero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hero">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="JavaScript的变量只是在特定的时间用于保存特定值的一个名字而已.不存在定义某个变量必须要保存何种数据类型值的规则.  ECMAScript(JavaScript核心)中的变量包含两种不同数据类型的值:&amp;gt;基本类型值 和 &amp;gt;引用类型值 . 基本类型值: 指的是简单的数据段.(5种基本数据类型). 引用类型值: 指那些可能由多个值构成的对象(对象,数组,函数). 引用类型的值是保存">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中的变量,作用域和内存问题">
+<meta property="og:url" content="http://yoursite.com/2017/04/17/关于JS中变量,作用域和内存问题/index.html">
 <meta property="og:site_name" content="Hero">
+<meta property="og:description" content="JavaScript的变量只是在特定的时间用于保存特定值的一个名字而已.不存在定义某个变量必须要保存何种数据类型值的规则.  ECMAScript(JavaScript核心)中的变量包含两种不同数据类型的值:&amp;gt;基本类型值 和 &amp;gt;引用类型值 . 基本类型值: 指的是简单的数据段.(5种基本数据类型). 引用类型值: 指那些可能由多个值构成的对象(对象,数组,函数). 引用类型的值是保存">
+<meta property="og:updated_time" content="2017-05-10T03:26:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hero">
+<meta name="twitter:title" content="JS中的变量,作用域和内存问题">
+<meta name="twitter:description" content="JavaScript的变量只是在特定的时间用于保存特定值的一个名字而已.不存在定义某个变量必须要保存何种数据类型值的规则.  ECMAScript(JavaScript核心)中的变量包含两种不同数据类型的值:&amp;gt;基本类型值 和 &amp;gt;引用类型值 . 基本类型值: 指的是简单的数据段.(5种基本数据类型). 引用类型值: 指那些可能由多个值构成的对象(对象,数组,函数). 引用类型的值是保存">
   
     <link rel="alternate" href="/atom.xml" title="Hero" type="application/atom+xml">
   
@@ -59,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-关于JS中变量,作用域和内存问题" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-关于JS中变量,作用域和内存问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/17/关于JS中变量,作用域和内存问题/" class="article-date">
   <time datetime="2017-04-17T10:17:15.000Z" itemprop="datePublished">2017-04-17</time>
@@ -74,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/17/关于JS中变量,作用域和内存问题/">JS中的变量,作用域和内存问题</a>
+    <h1 class="article-title" itemprop="name">
+      JS中的变量,作用域和内存问题
     </h1>
   
 
@@ -141,51 +144,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-关于ECMAScript6 的一些新特性(1)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/17/关于ECMAScript6 的一些新特性(1)/" class="article-date">
-  <time datetime="2017-04-17T10:15:30.000Z" itemprop="datePublished">2017-04-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/17/关于ECMAScript6 的一些新特性(1)/">关于ECMAScript6 的一些新特性(1).</a>
-    </h1>
+    <a href="/2017/04/17/关于ECMAScript6 的一些新特性(1)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于ECMAScript6 的一些新特性(1).</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><h4 id="块级作用域–let"><a href="#块级作用域–let" class="headerlink" title="块级作用域–let:"></a>块级作用域–let:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//ES5中只有全局作用域和局部作用域. 在ES6中 有了块级作用域.</div><div class="line">    </div><div class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">  <span class="built_in">let</span> fruit = <span class="string">'apple'</span>;</div><div class="line">&#125;</div><div class="line">    </div><div class="line">console.log(fruit);</div><div class="line">    </div><div class="line">/*使用<span class="built_in">let</span> 定义的变量只能用于定义它的那个块里面, 在块的外面是获取不到的. 目的就是要把当前的变量绑定到当前的作用域里*/</div></pre></td></tr></table></figure>
-<h4 id="const"><a href="#const" class="headerlink" title="const:"></a>const:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">   //在ES6中const用来表示一个衡量, 所谓衡量就是定义之后,不能被再重新赋值了.</div><div class="line"> </div><div class="line">  const fruit = <span class="string">'apple'</span>;</div><div class="line"> </div><div class="line">  console.log(fruit);</div><div class="line"> </div><div class="line">  const fruit = <span class="string">'banana'</span>;  </div><div class="line"> </div><div class="line">  console.log(fruit);    // 会报错.</div><div class="line"> </div><div class="line">   /*const 限制的是给衡量分配值的这个动作, 并不是显示衡量里面的值.*/</div><div class="line"> </div><div class="line">$  const arr = [];</div><div class="line"> </div><div class="line">  arr.push(<span class="string">'apple'</span>,<span class="string">'banana'</span>,<span class="string">'orange'</span>);</div><div class="line">  console.log(arr);   //输出后你会看见数组中,🍎,🍌和🍊.</div><div class="line"> </div><div class="line">  arr = [];   //但是当我重新给arr赋值的时候.会报错.</div></pre></td></tr></table></figure>
-<h4 id="breakfast"><a href="#breakfast" class="headerlink" title="breakfast"></a>breakfast</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//在ES6中breakfast, 分解结构的功能.</div><div class="line"></div><div class="line"> <span class="keyword">function</span> <span class="function"><span class="title">breakfast</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> [<span class="string">'🍎'</span>, <span class="string">'🍌'</span>, <span class="string">'🍊'</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"> <span class="built_in">let</span> [dessert, drink, fruit] = breakfast();</div><div class="line"></div><div class="line"> console.log(dessert, drink, fruit);</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/17/关于ECMAScript6 的一些新特性(1)/" data-id="cj74lx1um0001b6ul1i8yl6j4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         
