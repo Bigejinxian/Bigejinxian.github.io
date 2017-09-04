@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="技术," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="JavaScript的变量只是在特定的时间用于保存特定值的一个名字而已.不存在定义某个变量必须要保存何种数据类型值的规则.  ECMAScript(JavaScript核心)中的变量包含两种不同数据类型的值:&amp;gt;基本类型值 和 &amp;gt;引用类型值 . 基本类型值: 指的是简单的数据段.(5种基本数据类型). 引用类型值: 指那些可能由多个值构成的对象(对象,数组,函数). 引用类型的值是保存">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中的变量,作用域和内存问题">
+<meta property="og:url" content="http://yoursite.com/2017/04/17/关于JS中变量,作用域和内存问题/index.html">
+<meta property="og:site_name" content="Hero">
+<meta property="og:description" content="JavaScript的变量只是在特定的时间用于保存特定值的一个名字而已.不存在定义某个变量必须要保存何种数据类型值的规则.  ECMAScript(JavaScript核心)中的变量包含两种不同数据类型的值:&amp;gt;基本类型值 和 &amp;gt;引用类型值 . 基本类型值: 指的是简单的数据段.(5种基本数据类型). 引用类型值: 指那些可能由多个值构成的对象(对象,数组,函数). 引用类型的值是保存">
+<meta property="og:updated_time" content="2017-05-10T03:26:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS中的变量,作用域和内存问题">
+<meta name="twitter:description" content="JavaScript的变量只是在特定的时间用于保存特定值的一个名字而已.不存在定义某个变量必须要保存何种数据类型值的规则.  ECMAScript(JavaScript核心)中的变量包含两种不同数据类型的值:&amp;gt;基本类型值 和 &amp;gt;引用类型值 . 基本类型值: 指的是简单的数据段.(5种基本数据类型). 引用类型值: 指那些可能由多个值构成的对象(对象,数组,函数). 引用类型的值是保存">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/17/关于JS中变量,作用域和内存问题/"/>
+
+
+
+
+
+  <title>JS中的变量,作用域和内存问题 | Hero</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hero</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/17/关于JS中变量,作用域和内存问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Daniel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hero">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS中的变量,作用域和内存问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-17T18:17:15+08:00">
+                2017-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>JavaScript的变量只是在特定的时间用于保存特定值的一个名字而已.不存在定义某个变量必须要保存何种数据类型值的规则.</p>
+</blockquote>
+<p>ECMAScript(JavaScript核心)中的变量包含两种不同数据类型的值:&gt;基本类型值 和 &gt;引用类型值 .</p>
+<p></p><h4>基本类型值:</h4><br> 指的是简单的数据段.(5种基本数据类型).<p></p>
+<p></p><h4>引用类型值:</h4><br> 指那些可能由多个值构成的对象(对象,数组,函数). 引用类型的值是保存在内存中的对象. JS不允许直接访问内存中的位置.也就是说不能直接操作对象的内存空间.<p></p>
+<p></p><h4>动态添加属性:</h4><br>   对于值类型和引用类型,在值保存到变量以后,对不同类型值执行的操作非常不一样. 只能给引用类型值动态的添加属性.<br>   通过下面的例子进行演示.<p></p>
+<p><strong>引用类型:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">person.name = <span class="string">"Daniel"</span>;</div><div class="line">alert(person.name);   <span class="comment">//"Daniel"</span></div><div class="line"></div><div class="line"> 给对象添加了一个name属性,并给其赋值.如果对象不被销毁或是属性不被删除,则这个属性一致存在. 随时可以通过alert()函数进行访问.</div></pre></td></tr></table></figure></p>
+<p><strong>值类型:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"Daniel"</span>;</div><div class="line">name.age = <span class="number">18</span>;</div><div class="line">alert(name.age);   <span class="comment">//underfined</span></div><div class="line">不能给基本类型的值添加属性,虽然不会报错,但当我们访问这个属性的时候,会发现这个属性不见了.</div></pre></td></tr></table></figure></p>
+<p></p><h4>赋值变量值</h4><p></p>
+<blockquote>
+<p>在从一个变量向量一个变量复制基本类型值和引用类型值时, 两者的操作是不同的.</p>
+</blockquote>
+<p><strong>值类型:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">5</span>;</div><div class="line"><span class="keyword">var</span> num2 = num1;</div><div class="line"></div><div class="line">此时num2中保存的值也是<span class="number">5</span>,但num1和num2 是完全独立的,num2中的值也只是num1中<span class="number">5</span>的一个副本.两个变量参与的任何操作互相不影响.</div></pre></td></tr></table></figure></p>
+<p><strong>引用类型:</strong><br>当从一个变量向另一个变量复制引用类型的值时,这个值的副本实际上是一个指针,而这个指针指向存储在堆中的一个对象,复制后,两个变量将引用同一个对象.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="keyword">var</span> obj2 = obj1;</div><div class="line">obj1.name = <span class="string">"Jack"</span>;</div><div class="line">aler(obj2.name);  <span class="comment">//"Jack"</span></div><div class="line"></div><div class="line">obj1保存了一个新对象,然后被复制给了obj2中,也就是说obj1和obj2都指向了同一个对象. 所以改变其中一个变量就会影响另一个变量.</div></pre></td></tr></table></figure></p>
+<p></p><h4>传递参数</h4><br>ECMAScript中所有的参数传递都是按值传递的.那么结合上面所说,也就是说函数外部的值复制给函数内部的参数,就和把值从一个变量复制到另一个变量一样.<br>在向参数传递基本类型的值时,被传递的值会被复制给局部变量(即命名参数).<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addNum</span> (<span class="params">num</span>) </span>&#123;</div><div class="line">	num += <span class="number">10</span>;</div><div class="line">	<span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> count = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> result = addNum(count);</div><div class="line">alert(count);    <span class="comment">//20, 没有变化</span></div><div class="line">alert(result);   <span class="comment">//30</span></div><div class="line"></div><div class="line">在调用这个函数时,变量count被当做参数传进函数,数值<span class="number">20</span>被复制给参数num,在函数内num被加上了<span class="number">10</span>,但这并不会影响函数外部的count.</div></pre></td></tr></table></figure><p></p>
+<p>在向参数传递引用类型的值时,会把这个值在内存中的地址复制给一个局部变量,因此这个局部变量的变化会反映在函数的外部.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span> (<span class="params">obj</span>) </span>&#123;</div><div class="line">	obj.name = <span class="string">"Jack"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">setName(person);</div><div class="line">alert(person.name);   <span class="comment">//"Jack"</span></div><div class="line"></div><div class="line">用变量person保存了一个新创建的对象,这个变量被传递到setName()中后就被复制给了obj.在这个函数内部,obj和person引用的是同一个对象.所以,当函数内部为obj添加name属性后,函数外部的person也具有了该属性.</div></pre></td></tr></table></figure></p>
+<p>在这里很多人会错误的认为: 在局部作用域中修改的对象会在全局的作用域中反映出来,这就说明参数是按引用传递的. 为了证明对象是按值传递的,看下面的例子:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">	obj.name = <span class="string">"Jack"</span>;</div><div class="line">	obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">	obj.name = <span class="string">"Rose"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">setName(person);</div><div class="line">alert(person.name);    <span class="comment">//"Jack"</span></div><div class="line"></div><div class="line">这个例子与之前的区别就在于,在函数中将一个新对象赋给了变量obj.但当访问person.name时,显示的值依旧是Jack. 这说明即使在函数内部修改了参数的值,但原始的引用仍然保持没变.  实际上当函数内部重写obj时,这时候obj引用的就是一个局部对象了.在函数执行完后立即被销毁.</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>可以把JS里的函数参数想象成局部变量.</p>
+</blockquote>
+<p></p><h4>检测类型</h4><br>检测基本类型的时候用的是typeof,但是在检测引用类型的值时,要用instanceof操作符.语法如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">result = variable <span class="keyword">instanceof</span> <span class="keyword">constructor</span></div><div class="line">//<span class="keyword">constructor</span> 构造器</div><div class="line"></div><div class="line">alert(person instanceof Object);  //变量person是Object吗?</div></pre></td></tr></table></figure><p></p>
+<p>在检测一个引用类型值和Object构造函数时,instanceof始终会返回true.   但如果你用来检测基本类型的值,就会返回false,因为基本类型不是对象.</p>
+<p></p><h4>执行环境及作用域</h4><br>首先了解几个概念;<br><strong>执行环境:</strong> 执行环境定义了变量或函数有权访问的其他数据,决定了它们各自的行为.(全局执行环境是最外围的一个执行环境), 某个执行环境中的所有代码执行完后,这个环境就会被销毁,其中的所有变量和函数定义也随之销毁.<br>执行环境只有两种: 全局和局部.<p></p>
+<p><strong>变量对象:</strong> 环境中定义的所有变量和函数都保存在这个对象中. 每一个执行环境都有一个与之关联的变量对象.</p>
+<p><strong>作用域链:</strong> 当代码在一个环境中执行时,会创建变量对象的一个作用域链,作用域链的用途是保证对<code>执行环境</code>有权访问的所有变量和函数的<code>有序访问</code>.<br>       作用域链的前端,始终是当前执行的代码所在环境的变量对象.<br>       如果这个环境是函数,则将其<code>活动对象</code>作为变量对象.</p>
+<p>内部环境可以通过作用域链访问所有的外部环境,但外部环境不能访问内部环境中的任何变量和函数.  每个环境都能向上搜索作用域链,但不能向下搜索作用域链而进入另一个执行环境.</p>
+<p></p><h4>总结: </h4><p></p>
+<ul>
+<li>基本类型值在内存中占据固定大小的空间,因此会被保存在栈内存中;</li>
+<li>从一个变量向另一个变量复制基本类型的值,会创建这个值的副本,赋值给新变量.两者独立,任何操作不会互相影响.</li>
+<li>引用类型的值是对象,保存在内存中;</li>
+<li>包含引用类型值的变量实际上并不是包含对象本身,而是一个指向该对象的指针;</li>
+<li>从一个变量向另一个变量复制引用类型的值,复制的其实是指针,因此两个变量最终都指向同一个对象;</li>
+<li>确定一个值是哪种基本类型用typeof,确定一个值是哪种引用类型用的是instanceof操作符;<br>所有变量</li>
+</ul>
+<blockquote>
+<p>所有变量都存在于一个执行环境(也称为作用域)中,这个执行环境决定了变量的生命周期,以及哪一部分代码可以访问其中变量.下面是关于执行环境的总结:</p>
+</blockquote>
+<ul>
+<li>执行环境有全局执行环境和函数执行环境之分;</li>
+<li>每次进入一个新执行环境,都会创建一个用于搜索变量和函数的作用域链;</li>
+<li>函数的局部环境不仅有权访问函数作用域中的变量,而且有权访问其父环境,乃至全局环境;</li>
+<li>全局环境只能访问在全局环境中定义的变量和函数,而不能直接访问局部环境中的任何数据;</li>
+<li>变量的执行环境有助于确定应该何时释放内存;</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术/" rel="tag"># 技术</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/17/关于ECMAScript6 的一些新特性(1)/" rel="next" title="关于ECMAScript6 的一些新特性(1).">
+                <i class="fa fa-chevron-left"></i> 关于ECMAScript6 的一些新特性(1).
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/30/前端开发中常见问题杂烩(1)/" rel="prev" title="前端开发中常见问题杂烩(1).">
+                前端开发中常见问题杂烩(1). <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Daniel" />
+          <p class="site-author-name" itemprop="name">Daniel</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">基本类型值:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">引用类型值:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">动态添加属性:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">赋值变量值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">传递参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">检测类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">执行环境及作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">总结: </span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Daniel</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
