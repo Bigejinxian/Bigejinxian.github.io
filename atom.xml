@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hero</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-08-15T10:19:16.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Daniel</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深度学习--数据维度</title>
+    <link href="http://yoursite.com/2017/08/15/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E6%95%B0%E6%8D%AE%E7%BA%AC%E5%BA%A6/"/>
+    <id>http://yoursite.com/2017/08/15/深度学习-数据纬度/</id>
+    <published>2017-08-15T08:49:38.000Z</published>
+    <updated>2017-08-15T10:19:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="数据是有纬度的"><a href="#数据是有纬度的" class="headerlink" title="数据是有纬度的"></a>数据是有纬度的</h4><p><strong>标量</strong> 例如简单的数字 1，2，3.  称之为标量， 标量的维度是零。 我们是无法可视化零维度的。<br><strong>向量</strong> 由一列数据组成的数，叫做向量。 向量包括两种， 一种是行向量， 一种是列向量。向量是有长度的。<br><strong>矩阵</strong> 矩阵是二维的值。 我们用行数和列数来描述矩阵的形状。<br><strong>张量</strong> 张量可以指任何n维的值集合。</p>
+<blockquote>
+<p>总结：<br> <li> 标量是零维张量<br> </li><li> 向量是一维张量<br> </li><li> 矩阵是二维张量<br> </li><li> 任何大于二维的对象， 我们就成为张量。</li></p>
+</blockquote>
+<h4 id="NumPy"><a href="#NumPy" class="headerlink" title="NumPy"></a>NumPy</h4><blockquote>
+<p>NumPy系统是Python的一种开源的数值计算扩展。这种工具可用来存储和处理大型矩阵。</p>
+</blockquote>
+<h5 id="导入NumPy"><a href="#导入NumPy" class="headerlink" title="导入NumPy"></a>导入NumPy</h5><p>  大多数情况下，会看到这样一个约定，将其命名为np<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import numpy as np</div></pre></td></tr></table></figure></p>
+<h5 id="数据类型和形状"><a href="#数据类型和形状" class="headerlink" title="数据类型和形状"></a>数据类型和形状</h5><p>NumPy中处理数字的最常见方式是通过ndarray对象。 支持快速的数学运算。  可以存储任意数量的纬度，可以使用ndarray 来表示我们之前提到的任意数据类型： 标量，向量，矩阵或张量。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;数据是有纬度的&quot;&gt;&lt;a href=&quot;#数据是有纬度的&quot; class=&quot;headerlink&quot; title=&quot;数据是有纬度的&quot;&gt;&lt;/a&gt;数据是有纬度的&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;标量&lt;/strong&gt; 例如简单的数字 1，2，3.  称之为标量， 标量的维度是零
+    
+    </summary>
+    
+    
+      <category term="技术 深度学习" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>怦然心动</title>
+    <link href="http://yoursite.com/2017/08/14/%E6%80%A6%E7%84%B6%E5%BF%83%E5%8A%A8/"/>
+    <id>http://yoursite.com/2017/08/14/怦然心动/</id>
+    <published>2017-08-14T15:34:52.000Z</published>
+    <updated>2017-08-14T15:38:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>“Some of us get dipped in flat, some in satin, some in gloss. But every once in a while you find someone who’s iridescent, and when you do, nothing will ever compare. “<br>    有的人浅薄，有的人金玉其表败絮其中。有一天 你会遇到一个彩虹般绚烂的人，当你遇到这个人后，会觉得其他人都只是浮云而已。<br>    –《怦然心动》</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Some of us get dipped in flat, some in satin, some in gloss. But every once in a while you find someone who’s iridescent, a
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端开发中常见问题杂烩(1).</title>
+    <link href="http://yoursite.com/2017/04/30/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%9D%82%E7%83%A9(1)/"/>
+    <id>http://yoursite.com/2017/04/30/前端开发中常见问题杂烩(1)/</id>
+    <published>2017-04-29T18:40:00.000Z</published>
+    <updated>2017-05-10T03:09:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="影响网页加载速度慢的几大原因"><a href="#影响网页加载速度慢的几大原因" class="headerlink" title="影响网页加载速度慢的几大原因:"></a>影响网页加载速度慢的几大原因:</h3><blockquote>
+<ol><br>    <li>文件太大, HTML,CSS,JS,图片等文件都算</li><br>    <li>请求资源的数量太多造成网络堵塞</li><br>    <li>css,html代码写的不合理, 导致网页渲染慢</li><br>    <li>js中过多的使用同步请求,导致后面的内容加载速度慢</li><br>    <li>js中垃圾没有回收,内容泄露,代码逻辑复杂等导致页面运行缓慢</li><br>    <li>个人网速,或者服务器的网速慢导致</li><br></ol>
+
+</blockquote>
+<h3 id="CSS加载顺序"><a href="#CSS加载顺序" class="headerlink" title="CSS加载顺序"></a>CSS加载顺序</h3><blockquote>
+<ol><br>    <li> 位置属性 </li><br>    <li> 大小 </li><br>    <li> 文字系列 </li><br>    <li> 背景 </li><br>    <li> 其他 </li><br></ol>
+
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;影响网页加载速度慢的几大原因&quot;&gt;&lt;a href=&quot;#影响网页加载速度慢的几大原因&quot; class=&quot;headerlink&quot; title=&quot;影响网页加载速度慢的几大原因:&quot;&gt;&lt;/a&gt;影响网页加载速度慢的几大原因:&lt;/h3&gt;&lt;blockquote&gt;
+&lt;ol&gt;&lt;br&gt;  
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS中的变量,作用域和内存问题</title>
+    <link href="http://yoursite.com/2017/04/17/%E5%85%B3%E4%BA%8EJS%E4%B8%AD%E5%8F%98%E9%87%8F,%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/04/17/关于JS中变量,作用域和内存问题/</id>
+    <published>2017-04-17T10:17:15.000Z</published>
+    <updated>2017-05-10T03:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>JavaScript的变量只是在特定的时间用于保存特定值的一个名字而已.不存在定义某个变量必须要保存何种数据类型值的规则.</p>
+</blockquote>
+<p>ECMAScript(JavaScript核心)中的变量包含两种不同数据类型的值:&gt;基本类型值 和 &gt;引用类型值 .</p>
+<p></p><h4>基本类型值:</h4><br> 指的是简单的数据段.(5种基本数据类型).<p></p>
+<p></p><h4>引用类型值:</h4><br> 指那些可能由多个值构成的对象(对象,数组,函数). 引用类型的值是保存在内存中的对象. JS不允许直接访问内存中的位置.也就是说不能直接操作对象的内存空间.<p></p>
+<p></p><h4>动态添加属性:</h4><br>   对于值类型和引用类型,在值保存到变量以后,对不同类型值执行的操作非常不一样. 只能给引用类型值动态的添加属性.<br>   通过下面的例子进行演示.<p></p>
+<p><strong>引用类型:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">person.name = <span class="string">"Daniel"</span>;</div><div class="line">alert(person.name);   <span class="comment">//"Daniel"</span></div><div class="line"></div><div class="line"> 给对象添加了一个name属性,并给其赋值.如果对象不被销毁或是属性不被删除,则这个属性一致存在. 随时可以通过alert()函数进行访问.</div></pre></td></tr></table></figure></p>
+<p><strong>值类型:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"Daniel"</span>;</div><div class="line">name.age = <span class="number">18</span>;</div><div class="line">alert(name.age);   <span class="comment">//underfined</span></div><div class="line">不能给基本类型的值添加属性,虽然不会报错,但当我们访问这个属性的时候,会发现这个属性不见了.</div></pre></td></tr></table></figure></p>
+<p></p><h4>赋值变量值</h4><p></p>
+<blockquote>
+<p>在从一个变量向量一个变量复制基本类型值和引用类型值时, 两者的操作是不同的.</p>
+</blockquote>
+<p><strong>值类型:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">5</span>;</div><div class="line"><span class="keyword">var</span> num2 = num1;</div><div class="line"></div><div class="line">此时num2中保存的值也是<span class="number">5</span>,但num1和num2 是完全独立的,num2中的值也只是num1中<span class="number">5</span>的一个副本.两个变量参与的任何操作互相不影响.</div></pre></td></tr></table></figure></p>
+<p><strong>引用类型:</strong><br>当从一个变量向另一个变量复制引用类型的值时,这个值的副本实际上是一个指针,而这个指针指向存储在堆中的一个对象,复制后,两个变量将引用同一个对象.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="keyword">var</span> obj2 = obj1;</div><div class="line">obj1.name = <span class="string">"Jack"</span>;</div><div class="line">aler(obj2.name);  <span class="comment">//"Jack"</span></div><div class="line"></div><div class="line">obj1保存了一个新对象,然后被复制给了obj2中,也就是说obj1和obj2都指向了同一个对象. 所以改变其中一个变量就会影响另一个变量.</div></pre></td></tr></table></figure></p>
+<p></p><h4>传递参数</h4><br>ECMAScript中所有的参数传递都是按值传递的.那么结合上面所说,也就是说函数外部的值复制给函数内部的参数,就和把值从一个变量复制到另一个变量一样.<br>在向参数传递基本类型的值时,被传递的值会被复制给局部变量(即命名参数).<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addNum</span> (<span class="params">num</span>) </span>&#123;</div><div class="line">	num += <span class="number">10</span>;</div><div class="line">	<span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> count = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> result = addNum(count);</div><div class="line">alert(count);    <span class="comment">//20, 没有变化</span></div><div class="line">alert(result);   <span class="comment">//30</span></div><div class="line"></div><div class="line">在调用这个函数时,变量count被当做参数传进函数,数值<span class="number">20</span>被复制给参数num,在函数内num被加上了<span class="number">10</span>,但这并不会影响函数外部的count.</div></pre></td></tr></table></figure><p></p>
+<p>在向参数传递引用类型的值时,会把这个值在内存中的地址复制给一个局部变量,因此这个局部变量的变化会反映在函数的外部.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span> (<span class="params">obj</span>) </span>&#123;</div><div class="line">	obj.name = <span class="string">"Jack"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">setName(person);</div><div class="line">alert(person.name);   <span class="comment">//"Jack"</span></div><div class="line"></div><div class="line">用变量person保存了一个新创建的对象,这个变量被传递到setName()中后就被复制给了obj.在这个函数内部,obj和person引用的是同一个对象.所以,当函数内部为obj添加name属性后,函数外部的person也具有了该属性.</div></pre></td></tr></table></figure></p>
+<p>在这里很多人会错误的认为: 在局部作用域中修改的对象会在全局的作用域中反映出来,这就说明参数是按引用传递的. 为了证明对象是按值传递的,看下面的例子:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">	obj.name = <span class="string">"Jack"</span>;</div><div class="line">	obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">	obj.name = <span class="string">"Rose"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">setName(person);</div><div class="line">alert(person.name);    <span class="comment">//"Jack"</span></div><div class="line"></div><div class="line">这个例子与之前的区别就在于,在函数中将一个新对象赋给了变量obj.但当访问person.name时,显示的值依旧是Jack. 这说明即使在函数内部修改了参数的值,但原始的引用仍然保持没变.  实际上当函数内部重写obj时,这时候obj引用的就是一个局部对象了.在函数执行完后立即被销毁.</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>可以把JS里的函数参数想象成局部变量.</p>
+</blockquote>
+<p></p><h4>检测类型</h4><br>检测基本类型的时候用的是typeof,但是在检测引用类型的值时,要用instanceof操作符.语法如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">result = variable <span class="keyword">instanceof</span> <span class="keyword">constructor</span></div><div class="line">//<span class="keyword">constructor</span> 构造器</div><div class="line"></div><div class="line">alert(person instanceof Object);  //变量person是Object吗?</div></pre></td></tr></table></figure><p></p>
+<p>在检测一个引用类型值和Object构造函数时,instanceof始终会返回true.   但如果你用来检测基本类型的值,就会返回false,因为基本类型不是对象.</p>
+<p></p><h4>执行环境及作用域</h4><br>首先了解几个概念;<br><strong>执行环境:</strong> 执行环境定义了变量或函数有权访问的其他数据,决定了它们各自的行为.(全局执行环境是最外围的一个执行环境), 某个执行环境中的所有代码执行完后,这个环境就会被销毁,其中的所有变量和函数定义也随之销毁.<br>执行环境只有两种: 全局和局部.<p></p>
+<p><strong>变量对象:</strong> 环境中定义的所有变量和函数都保存在这个对象中. 每一个执行环境都有一个与之关联的变量对象.</p>
+<p><strong>作用域链:</strong> 当代码在一个环境中执行时,会创建变量对象的一个作用域链,作用域链的用途是保证对<code>执行环境</code>有权访问的所有变量和函数的<code>有序访问</code>.<br>       作用域链的前端,始终是当前执行的代码所在环境的变量对象.<br>       如果这个环境是函数,则将其<code>活动对象</code>作为变量对象.</p>
+<p>内部环境可以通过作用域链访问所有的外部环境,但外部环境不能访问内部环境中的任何变量和函数.  每个环境都能向上搜索作用域链,但不能向下搜索作用域链而进入另一个执行环境.</p>
+<p></p><h4>总结: </h4><p></p>
+<ul>
+<li>基本类型值在内存中占据固定大小的空间,因此会被保存在栈内存中;</li>
+<li>从一个变量向另一个变量复制基本类型的值,会创建这个值的副本,赋值给新变量.两者独立,任何操作不会互相影响.</li>
+<li>引用类型的值是对象,保存在内存中;</li>
+<li>包含引用类型值的变量实际上并不是包含对象本身,而是一个指向该对象的指针;</li>
+<li>从一个变量向另一个变量复制引用类型的值,复制的其实是指针,因此两个变量最终都指向同一个对象;</li>
+<li>确定一个值是哪种基本类型用typeof,确定一个值是哪种引用类型用的是instanceof操作符;<br>所有变量</li>
+</ul>
+<blockquote>
+<p>所有变量都存在于一个执行环境(也称为作用域)中,这个执行环境决定了变量的生命周期,以及哪一部分代码可以访问其中变量.下面是关于执行环境的总结:</p>
+</blockquote>
+<ul>
+<li>执行环境有全局执行环境和函数执行环境之分;</li>
+<li>每次进入一个新执行环境,都会创建一个用于搜索变量和函数的作用域链;</li>
+<li>函数的局部环境不仅有权访问函数作用域中的变量,而且有权访问其父环境,乃至全局环境;</li>
+<li>全局环境只能访问在全局环境中定义的变量和函数,而不能直接访问局部环境中的任何数据;</li>
+<li>变量的执行环境有助于确定应该何时释放内存;</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;JavaScript的变量只是在特定的时间用于保存特定值的一个名字而已.不存在定义某个变量必须要保存何种数据类型值的规则.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ECMAScript(JavaScript核心)中的变量包含两种不同数据类型的值:
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于ECMAScript6 的一些新特性(1).</title>
+    <link href="http://yoursite.com/2017/04/17/%E5%85%B3%E4%BA%8EECMAScript6%20%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7(1)/"/>
+    <id>http://yoursite.com/2017/04/17/关于ECMAScript6 的一些新特性(1)/</id>
+    <published>2017-04-17T10:15:30.000Z</published>
+    <updated>2017-05-10T03:02:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><h4 id="块级作用域–let"><a href="#块级作用域–let" class="headerlink" title="块级作用域–let:"></a>块级作用域–let:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//ES5中只有全局作用域和局部作用域. 在ES6中 有了块级作用域.</div><div class="line">    </div><div class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">  <span class="built_in">let</span> fruit = <span class="string">'apple'</span>;</div><div class="line">&#125;</div><div class="line">    </div><div class="line">console.log(fruit);</div><div class="line">    </div><div class="line">/*使用<span class="built_in">let</span> 定义的变量只能用于定义它的那个块里面, 在块的外面是获取不到的. 目的就是要把当前的变量绑定到当前的作用域里*/</div></pre></td></tr></table></figure>
+<h4 id="const"><a href="#const" class="headerlink" title="const:"></a>const:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">   //在ES6中const用来表示一个衡量, 所谓衡量就是定义之后,不能被再重新赋值了.</div><div class="line"> </div><div class="line">  const fruit = <span class="string">'apple'</span>;</div><div class="line"> </div><div class="line">  console.log(fruit);</div><div class="line"> </div><div class="line">  const fruit = <span class="string">'banana'</span>;  </div><div class="line"> </div><div class="line">  console.log(fruit);    // 会报错.</div><div class="line"> </div><div class="line">   /*const 限制的是给衡量分配值的这个动作, 并不是显示衡量里面的值.*/</div><div class="line"> </div><div class="line">$  const arr = [];</div><div class="line"> </div><div class="line">  arr.push(<span class="string">'apple'</span>,<span class="string">'banana'</span>,<span class="string">'orange'</span>);</div><div class="line">  console.log(arr);   //输出后你会看见数组中,🍎,🍌和🍊.</div><div class="line"> </div><div class="line">  arr = [];   //但是当我重新给arr赋值的时候.会报错.</div></pre></td></tr></table></figure>
+<h4 id="breakfast"><a href="#breakfast" class="headerlink" title="breakfast"></a>breakfast</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//在ES6中breakfast, 分解结构的功能.</div><div class="line"></div><div class="line"> <span class="keyword">function</span> <span class="function"><span class="title">breakfast</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> [<span class="string">'🍎'</span>, <span class="string">'🍌'</span>, <span class="string">'🍊'</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"> <span class="built_in">let</span> [dessert, drink, fruit] = breakfast();</div><div class="line"></div><div class="line"> console.log(dessert, drink, fruit);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;ES6&quot;&gt;&lt;a href=&quot;#ES6&quot; class=&quot;headerlink&quot; title=&quot;ES6&quot;&gt;&lt;/a&gt;ES6&lt;/h3&gt;&lt;h4 id=&quot;块级作用域–let&quot;&gt;&lt;a href=&quot;#块级作用域–let&quot; class=&quot;headerlink&quot; title=&quot;块级作
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+</feed>
